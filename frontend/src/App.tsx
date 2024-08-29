@@ -4,12 +4,17 @@ import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import { useAuthContext } from './context/AuthContext'
 import { Loader } from 'lucide-react'
+import { Toaster } from 'react-hot-toast'
 
 function App () {
   const { authUser, isLoading } = useAuthContext()
 
   if (isLoading) {
-    return <Loader className='w-10 h-10 animate-spin' />
+    return (
+      <div className='w-full h-screen flex items-center justify-center'>
+        <Loader className='w-12 h-12 animate-spin' />
+      </div>
+    )
   }
 
   return (
@@ -28,6 +33,8 @@ function App () {
           element={!authUser ? <Login /> : <Navigate to='/' />}
         />
       </Routes>
+
+      <Toaster toastOptions={{ duration: 2000 }} />
     </div>
   )
 }

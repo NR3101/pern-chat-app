@@ -11,7 +11,7 @@ import {
 // Auth user type
 type AuthUserType = {
   id: string
-  email: string
+  username: string
   fullName: string
   profilePic: string
   gender: string
@@ -33,7 +33,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const [authUser, setAuthUser] = useState<AuthUserType | null>(null)
   const [isLoading, setIsLoading] = useState(true)
 
-  // Check if user is logged in 
+  // Check if user is logged in
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -45,8 +45,9 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
         }
 
         setAuthUser(data)
-      } catch (error) {
+      } catch (error: any) {
         console.error(error)
+        // toast.error(error.message)
       } finally {
         setIsLoading(false)
       }
