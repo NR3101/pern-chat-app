@@ -23,7 +23,7 @@ const Login = () => {
         <h1 className='text-3xl font-semibold text-center text-white'>
           Login{' '}
           <span className='bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent'>
-            MERN Chat
+            PERN Chat
           </span>
         </h1>
 
