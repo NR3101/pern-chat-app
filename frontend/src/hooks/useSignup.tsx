@@ -10,6 +10,7 @@ type SignUpInputs = {
   gender: string
 }
 
+// hook to handle user signup
 export const useSignup = () => {
   const [loading, setloading] = useState(false)
   const { setAuthUser } = useAuthContext()

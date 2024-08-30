@@ -7,6 +7,7 @@ type LoginInputs = {
   password: string
 }
 
+// hook to handle user login
 export const useLogin = () => {
   const [loading, setLoading] = useState(false)
   const { setAuthUser } = useAuthContext()

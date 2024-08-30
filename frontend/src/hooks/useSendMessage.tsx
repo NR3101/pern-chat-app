@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ConversationStore from '../store/conversationStore'
 import toast from 'react-hot-toast'
 
+// hook to send a message
 export const useSendMessage = () => {
   const [loading, setLoading] = useState(false)
   const { messages, setMessages, selectedConversation } = ConversationStore()

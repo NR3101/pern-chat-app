@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { ConversationType } from '../store/conversationStore'
 import toast from 'react-hot-toast'
 
+// hook to fetch conversations
 export const useGetConversations = () => {
   const [loading, setLoading] = useState(false)
   const [conversations, setConversations] = useState<ConversationType[]>([])

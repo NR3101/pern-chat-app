@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import ConversationStore from '../store/conversationStore'
 import toast from 'react-hot-toast'
 
+// hook to get messages for the selected conversation
 export const useGetMessages = () => {
   const [loading, setLoading] = useState(false)
   const { messages, setMessages, selectedConversation } = ConversationStore()
