@@ -26,7 +26,7 @@ const userSocketMap: {
 
 // This is used to listen to the connection event
 io.on("connection", (socket) => {
-  console.log("a user connected");
+  // console.log("a user connected");
 
   const userId = socket.handshake.query.userId as string;
 
@@ -37,7 +37,7 @@ io.on("connection", (socket) => {
 
   // socket.on is used to listen to events.Can be used on both client and server side
   socket.on("disconnect", () => {
-    console.log("user disconnected", socket.id);
+    // console.log("user disconnected", socket.id);
     delete userSocketMap[userId];
     io.emit("getOnlineUsers", Object.keys(userSocketMap));
   });
